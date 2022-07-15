@@ -2,7 +2,6 @@ import time
 import urllib.request
 
 import requests
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -15,7 +14,7 @@ Sel_user = browser.findElement(By.cssSelector, username_selector)
 
 
 # login
-time.sleep(5)
+time.sleep(10)
 username = driver.find_element_by_css_selector("input[name='username']")
 password = driver.find_element_by_css_selector("input[name='password']")
 username.clear()
