@@ -108,13 +108,13 @@ for anchor in anchors:
             if l.startswith("https://www.instagram.com/explore/locations/")
         ]
 
-        if str(location) == "https://www.instagram.com/explore/locations/":
-            continue
-
         if len(location) == 0:
             str = "no location for this post"
             locations.append(str)
+        elif str(location) == "https://www.instagram.com/explore/locations/":
+            continue
         locations.append(location)
+
     except:
         pass
 
