@@ -3,6 +3,7 @@
 
 # In[67]:
 
+import configparser
 import time
 
 from selenium import webdriver
@@ -28,9 +29,9 @@ password = WebDriverWait(driver, 10).until(
 )
 
 username.clear()
-username.send_keys("USER")
+username.send_keys("user")
 password.clear()
-password.send_keys("PASSWORD")
+password.send_keys("password")
 
 button = (
     WebDriverWait(driver, 2)
@@ -58,7 +59,9 @@ searchbox = WebDriverWait(driver, 10).until(
 )
 searchbox.clear()
 
-keyword = "#咖啡廳"  # your keyword
+keyword = "#台中咖啡廳"  # your keyword
+
+
 searchbox.send_keys(keyword)
 
 time.sleep(5)
@@ -69,6 +72,7 @@ link = WebDriverWait(driver, 10).until(
 )
 link.click()  # this didnt trigger the click envet on input, i am still fixing the issue, will return an error
 
+# time.sleep(10)
 # searchbox.send_keys(Keys.ENTER)
 
 # In[107]:
@@ -86,7 +90,7 @@ anchors = driver.find_elements(By.TAG_NAME, "a")
 anchors = [a.get_attribute("href") for a in anchors]
 
 anchors = [a for a in anchors if a.startswith("https://www.instagram.com/p/")]
-anchors[:5]
+anchors[:2]
 
 # anchors = [a for a in anchors if a.startswith("https://www.instagram.com/explore/locations/")]#\
 # print('Found ' + str(len(anchors)) + ' links to images')
@@ -118,4 +122,4 @@ for anchor in anchors:
     except:
         pass
 
-locations[:5]
+print(locations)

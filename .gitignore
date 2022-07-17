@@ -3,3 +3,4 @@ file.txt
 request.py
 test.py
 .ipynb_checkpoints/
+.env
